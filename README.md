@@ -1,35 +1,34 @@
-# React Redux Toolkit Homework
+# React Redux Async App
 
-## Description
+React application built with Vite and Redux Toolkit.
 
-A React application created with Vite that demonstrates state management using Redux Toolkit.
+The app loads user data from the JSONPlaceholder API using `createAsyncThunk`. Users 1–10 can be selected, and the UI handles loading and error states.
 
-The project is a refactored version of a previous React Context application. Global state such as user information and theme settings has been moved to Redux.
+## Technologies
+
+- React
+- Vite
+- Redux Toolkit
+- React Redux
+- JSONPlaceholder API
 
 ## Features
 
-- Redux Toolkit
-- React Redux
-- configureStore
-- createSlice
-- Redux actions
-- Redux reducers
-- Redux selectors
-- useSelector
-- useDispatch
-- Global theme state
-- Global user state
+- Redux Store
+- `createSlice`
+- `createAsyncThunk`
+- `useSelector` and `useDispatch`
+- `pending`, `fulfilled`, `rejected` states
+- User selection and API loading
+- Light / Dark theme
 
 ## Installation
 
 ```bash
 npm install
-```
-
-```Run
 npm run dev
 ```
 
-## Git
+## Repository
 
-https://github.com/mmf2003/Homework45.git
+https://github.com/mmf2003/Homework46.git
