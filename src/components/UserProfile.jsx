@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 
 import {
-    changeRole,
     selectError,
     selectLoading,
     selectUser,
@@ -44,22 +43,13 @@ function UserProfile() {
                 </>
             )}
 
-            <div className="profile-actions">
-                <button
-                    className="role-button"
-                    onClick={() => dispatch(changeRole())}
-                >
-                    Change Role
-                </button>
-
-                <button
-                    className="load-button"
-                    onClick={handleLoadUser}
-                    disabled={loading}
-                >
-                    {loading ? "Loading..." : "Load User from API"}
-                </button>
-            </div>
+            <button
+                className="load-button"
+                onClick={handleLoadUser}
+                disabled={loading}
+            >
+                {loading ? "Loading..." : "Load User from API"}
+            </button>
         </div>
     );
 }

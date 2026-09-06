@@ -8,7 +8,6 @@ const initialState = {
         role: "Frontend Developer",
     },
     theme: "light",
-
     loading: false,
     error: null,
 };
@@ -20,13 +19,6 @@ const appSlice = createSlice({
     reducers: {
         toggleTheme: (state) => {
             state.theme = state.theme === "light" ? "dark" : "light";
-        },
-
-        changeRole: (state) => {
-            state.user.role =
-                state.user.role === "Frontend Developer"
-                    ? "React Developer"
-                    : "Frontend Developer";
         },
     },
 
@@ -54,7 +46,7 @@ const appSlice = createSlice({
     },
 });
 
-export const { toggleTheme, changeRole } = appSlice.actions;
+export const { toggleTheme } = appSlice.actions;
 
 export const selectUser = (state) => state.app.user;
 export const selectTheme = (state) => state.app.theme;
