@@ -108,3 +108,53 @@
     color: #d93025;
     font-weight: 600;
 }
+
+.user-picker {
+    margin-bottom: 24px;
+}
+
+.user-picker__label {
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.user-picker__buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.user-picker__button {
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid #d5d5d5;
+    border-radius: 10px;
+
+    background-color: white;
+    color: #222;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s,
+        color 0.2s,
+        border-color 0.2s,
+        transform 0.2s;
+}
+
+.user-picker__button:hover {
+    border-color: #646cff;
+    color: #646cff;
+    transform: translateY(-2px);
+}
+
+.user-picker__button.active {
+    border-color: #646cff;
+    background-color: #646cff;
+    color: white;
+}
