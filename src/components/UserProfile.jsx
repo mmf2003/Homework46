@@ -20,8 +20,9 @@ function UserProfile() {
 
     const userIds = Array.from({ length: 10 }, (_, index) => index + 1);
 
-    const handleLoadUser = () => {
-        dispatch(fetchUser(selectedUserId));
+    const handleUserSelect = (id) => {
+        setSelectedUserId(id);
+        dispatch(fetchUser(id));
     };
 
     return (
@@ -41,7 +42,8 @@ function UserProfile() {
                                     ? "user-picker__button active"
                                     : "user-picker__button"
                             }
-                            onClick={() => setSelectedUserId(id)}
+                            onClick={() => handleUserSelect(id)}
+                            disabled={loading}
                         >
                             {id}
                         </button>
@@ -53,8 +55,8 @@ function UserProfile() {
 
             {error && <p className="error-message">{error}</p>}
 
-            {!loading && (
-                <>
+            {!loading && !error && (
+                <div className="user-info">
                     <p>
                         <strong>Name:</strong> {user.name}
                     </p>
@@ -66,16 +68,8 @@ function UserProfile() {
                     <p>
                         <strong>Role:</strong> {user.role}
                     </p>
-                </>
+                </div>
             )}
-
-            <button
-                className="load-button"
-                onClick={handleLoadUser}
-                disabled={loading}
-            >
-                {loading ? "Loading..." : "Load User from API"}
-            </button>
         </div>
     );
 }
